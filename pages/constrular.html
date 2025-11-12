@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constrular - Materiais de Construção</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        :root {
+            --primary: #e74c3c;
+            --primary-dark: #c0392b;
+            --secondary: #2c3e50;
+            --accent: #3498db;
+            --light: #f8f9fa;
+            --gray: #95a5a6;
+            --text: #333333;
+            --white: #ffffff;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --radius: 16px;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+        }
+
+        .container {
+            max-width: 480px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .profile-card {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 30px 25px;
+            border-radius: var(--radius);
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .profile-image {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            overflow: hidden;
+            border: 4px solid var(--white);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-badge {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            background: var(--primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            border: 2px solid var(--white);
+        }
+
+        .profile-card h1 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        .profile-card p {
+            color: var(--gray);
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .tagline {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            box-shadow: 0 3px 8px rgba(231, 76, 60, 0.3);
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin: 25px 0;
+            padding: 15px;
+            background: var(--light);
+            border-radius: var(--radius);
+        }
+
+        .stat {
+            padding: 5px 10px;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        .emergency-banner {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 18px;
+            border-radius: var(--radius);
+            text-align: center;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .emergency-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .emergency-banner i {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+
+        .emergency-banner div {
+            font-weight: 600;
+            margin-bottom: 5px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .emergency-banner small {
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 25px;
+        }
+
+        .link-item {
+            background: var(--white);
+            padding: 16px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+            border: 1px solid #f1f2f6;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: var(--primary);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .link-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+            border-color: var(--primary);
+        }
+
+        .link-item:hover::before {
+            transform: scaleY(1);
+        }
+
+        .link-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: white;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .link-item:hover .link-icon {
+            transform: scale(1.1);
+        }
+
+        .whatsapp .link-icon { background: #25D366; }
+        .instagram .link-icon { background: linear-gradient(45deg, #405DE6, #833AB4, #C13584, #E1306C, #FD1D1D); }
+        .location .link-icon { background: var(--accent); }
+        .catalog .link-icon { background: #e67e22; }
+        .contact .link-icon { background: #9b59b6; }
+        .budget .link-icon { background: #27ae60; }
+
+        .link-text {
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        .link-title {
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 4px;
+            color: var(--secondary);
+        }
+
+        .link-desc {
+            font-size: 0.82rem;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        .info-section {
+            background: var(--white);
+            padding: 22px;
+            border-radius: var(--radius);
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            border: 1px solid #f1f2f6;
+        }
+
+        .section-title {
+            font-size: 1.15rem;
+            color: var(--secondary);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+        }
+
+        .section-title i {
+            color: var(--primary);
+        }
+
+        .hours-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .hour-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #f1f2f6;
+        }
+
+        .hour-day {
+            font-weight: 600;
+            color: var(--secondary);
+            font-size: 0.95rem;
+        }
+
+        .hour-time {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 25px;
+            border-radius: var(--radius);
+            margin-bottom: 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'%3E%3Cpath d='M0 60L60 0H30L0 30M60 60V30L30 60'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .cta-title {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-description {
+            margin-bottom: 20px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.5);
+        }
+
+        .floating-notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #27ae60;
+            color: white;
+            padding: 14px 22px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            display: none;
+            z-index: 100;
+            animation: slideIn 0.3s ease;
+            max-width: 300px;
+            font-weight: 500;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .footer {
+            text-align: center;
+            color: var(--gray);
+            font-size: 0.8rem;
+            margin-top: 20px;
+            padding: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .social-link {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .profile-card {
+                padding: 25px 20px;
+            }
+            
+            .link-item {
+                padding: 14px 16px;
+            }
+            
+            .hours-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Cartão de Perfil -->
+        <div class="profile-card">
+            <div class="profile-image">
+                <img src="image.png" alt="Loja Constrular">
+                <div class="profile-badge">
+                    <i class="fas fa-check"></i>
+                </div>
+            </div>
+            <h1>Constrular</h1>
+            <p>Materiais de Construção de Qualidade</p>
+            <div class="tagline">Há 15 anos construindo sonhos</div>
+        </div>
+
+        <!-- Estatísticas -->
+        <div class="stats-container">
+            <div class="stat">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Anos</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Clientes</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">24h</div>
+                <div class="stat-label">Entrega</div>
+            </div>
+        </div>
+
+        <!-- Links -->
+        <div class="links-container">
+            <a href="https://wa.me/5589999732666?text=Olá! Gostaria de mais informações sobre os produtos" class="link-item whatsapp" target="_blank">
+                <div class="link-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <div class="link-text">
+                    <div class="link-title">WhatsApp</div>
+                    <div class="link-desc">Fale conosco diretamente</div>
+                </div>
+            </a>
+
+            <a href="https://instagram.com/constrular" class="link-item instagram" target="_blank">
+                <div class="link-icon">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <div class="link-text">
+                    <div class="link-title">Instagram</div>
+                    <div class="link-desc">Veja nossos projetos</div>
+                </div>
+            </a>
+
+            <a href="https://maps.google.com/?q=Constrular+São+Paulo" class="link-item location" target="_blank">
+                <div class="link-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="link-text">
+                    <div class="link-title">Localização</div>
+                    <div class="link-desc">Venha nos visitar</div>
+                </div>
+            </a>
+
+            <a href="#" class="link-item catalog" onclick="showCatalog()">
+                <div class="link-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <div class="link-text">
+                    <div class="link-title">Catálogo</div>
+                    <div class="link-desc">Nossos produtos</div>
+                </div>
+            </a>
+
+            <a href="tel:+5589999732666" class="link-item contact">
+                <div class="link-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <div class="link-text">
+                    <div class="link-title">Telefone</div>
+                    <div class="link-desc">(89) 99973-2666</div>
+                </div>
+            </a>
+
+            <a href="#" class="link-item budget" onclick="startBudget()">
+                <div class="link-icon">
+                    <i class="fas fa-calculator"></i>
+                </div>
+                <div class="link-text">
+                    <div class="link-title">Orçamento</div>
+                    <div class="link-desc">Solicite online</div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Horário de Funcionamento -->
+        <div class="info-section">
+            <div class="section-title">
+                <i class="far fa-clock"></i>
+                Horário de Funcionamento
+            </div>
+            <div class="hours-grid">
+                <div class="hour-item">
+                    <div class="hour-day">Segunda a Sexta</div>
+                    <div class="hour-time">7h às 18h</div>
+                </div>
+                <div class="hour-item">
+                    <div class="hour-day">Sábados</div>
+                    <div class="hour-time">7h às 13h</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nova Seção CTA -->
+        <div class="cta-section">
+            <h3 class="cta-title">Quer uma página como esta?</h3>
+            <p class="cta-description">Tenha sua própria página profissional para seu negócio e aumente suas vendas!</p>
+            <a href="https://wa.me/5589999732666?text=Olá! Gostaria de solicitar uma página como esta para meu negócio" class="cta-button" target="_blank">
+                Solicitar Minha Página
+            </a>
+        </div>
+
+        <!-- Rodapé -->
+        <div class="footer">
+            <p>Constrular &copy; 2023 - Todos os direitos reservados</p>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notificação Flutuante -->
+    <div class="floating-notification" id="notification">
+        <i class="fas fa-check-circle"></i> Redirecionando...
+    </div>
+
+    <script>
+        // Função para mostrar notificação
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            notification.innerHTML = `<i class="fas fa-check-circle"></i> ${message}`;
+            notification.style.display = 'block';
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 3000);
+        }
+
+        // Função para catálogo
+        function showCatalog() {
+            showNotification('Abrindo catálogo de produtos...');
+            setTimeout(() => {
+                // Simula abertura de catálogo - substitua pelo link real
+                window.open('catalogo.pdf', '_blank');
+            }, 1000);
+        }
+
+        // Função para orçamento
+        function startBudget() {
+            showNotification('Preparando orçamento...');
+            setTimeout(() => {
+                // Redireciona para WhatsApp com mensagem pré-definida
+                const message = "Olá! Gostaria de solicitar um orçamento para materiais de construção.";
+                window.open(`https://wa.me/5589999732666?text=${encodeURIComponent(message)}`, '_blank');
+            }, 1500);
+        }
+
+        // Efeito de clique nos links
+        document.querySelectorAll('.link-item').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (!this.getAttribute('href') || this.getAttribute('href') === '#') {
+                    e.preventDefault();
+                }
+                
+                // Efeito visual de clique
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+        });
+
+        // Verifica se está fora do horário comercial
+        function updateBusinessStatus() {
+            const now = new Date();
+            const hour = now.getHours();
+            const day = now.getDay();
+            
+            const isOpen = (day >= 1 && day <= 5 && hour >= 7 && hour < 18) || 
+                          (day === 6 && hour >= 7 && hour < 13);
+            
+            if (!isOpen) {
+                const banner = document.querySelector('.emergency-banner');
+                banner.innerHTML = `
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <div>FORA DO HORÁRIO - Entrega Emergencial 24h</div>
+                    <small>Use nosso serviço de emergência</small>
+                `;
+            }
+        }
+
+        // Inicializa funções
+        updateBusinessStatus();
+    </script>
+</body>
+</html>
