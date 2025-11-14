@@ -15,15 +15,16 @@
         }
 
         :root {
-            --primary: #667eea;
-            --primary-dark: #5a6fd8;
+            --primary: #F5B700;
+            --primary-dark: #e0a500;
+            --primary-light: #f8c84d;
             --secondary: #764ba2;
             --accent: #ff6b6b;
             --light: #f8f9fa;
             --dark: #2d3748;
             --text: #4a5568;
             --white: #ffffff;
-            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient: linear-gradient(135deg, #F5B700 0%, #f8c84d 100%);
             --gradient-accent: linear-gradient(135deg, #ff6b6b, #ff8e53);
             --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             --radius: 16px;
@@ -38,8 +39,8 @@
 
         /* Header */
         header {
-            background: var(--gradient);
-            color: white;
+            background: var(--white);
+            color: var(--dark);
             padding: 20px 0;
             position: fixed;
             width: 100%;
@@ -66,10 +67,11 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            color: var(--primary);
         }
 
         .logo i {
-            color: var(--accent);
+            color: var(--primary);
         }
 
         .nav-links {
@@ -78,19 +80,19 @@
         }
 
         .nav-links a {
-            color: white;
+            color: var(--dark);
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: var(--accent);
+            color: var(--primary);
         }
 
         .cta-nav {
-            background: var(--accent);
-            color: white;
+            background: var(--primary);
+            color: var(--dark);
             padding: 10px 20px;
             border-radius: 50px;
             text-decoration: none;
@@ -99,54 +101,84 @@
         }
 
         .cta-nav:hover {
-            background: #ff5252;
+            background: var(--primary-dark);
             transform: translateY(-2px);
         }
 
-        /* Hero Section */
+        /* Hero Section - Design Profissional */
         .hero {
             padding: 160px 0 100px;
-            background: var(--gradient);
-            color: white;
-            text-align: center;
+            background: var(--white);
+            color: var(--dark);
             position: relative;
             overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
-        }
-
         .hero-content {
-            max-width: 800px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            align-items: center;
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px;
             position: relative;
             z-index: 2;
         }
 
+        .hero-text {
+            width: 400px;
+        }
+
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             margin-bottom: 20px;
             font-weight: 800;
             line-height: 1.2;
+            color: var(--dark);
         }
 
-        .hero p {
-            font-size: 1.3rem;
+        .hero-subtitle {
+            font-size: 1.4rem;
             margin-bottom: 30px;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            opacity: 0.8;
+            line-height: 1.7;
+        }
+
+        .hero-features {
+            margin: 40px 0;
+        }
+
+        .feature-highlight {
+            background: rgba(245, 183, 0, 0.1);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .feature-highlight h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        .feature-highlight p {
+            font-size: 1rem;
             opacity: 0.9;
         }
 
         .hero-buttons {
             display: flex;
             gap: 15px;
-            justify-content: center;
             margin-top: 30px;
         }
 
@@ -163,38 +195,220 @@
         }
 
         .btn-primary {
-            background: var(--accent);
-            color: white;
-            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+            background: var(--primary);
+            color: var(--dark);
+            box-shadow: 0 8px 20px rgba(245, 183, 0, 0.4);
         }
 
         .btn-primary:hover {
-            background: #ff5252;
+            background: var(--primary-dark);
             transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(255, 107, 107, 0.5);
+            box-shadow: 0 12px 25px rgba(245, 183, 0, 0.5);
         }
 
         .btn-secondary {
             background: transparent;
-            color: white;
-            border: 2px solid white;
+            color: var(--dark);
+            border: 2px solid var(--primary);
         }
 
         .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+
+        /* Phone Preview - Design Profissional */
+        .phone-preview {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            position: relative;
+            height: 600px;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .phone-mockup {
+            width: 420px;
+            height: 650px;
+            background: #1a1a1a;
+            border-radius: 40px;
+            padding: 15px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            position: relative;
+            transition: all 0.5s ease;
+            z-index: 2;
+        }
+
+        .phone-mockup:nth-child(1) {
+            transform: perspective(1000px) rotateY(-10deg) rotateX(5deg);
+            margin-top: -30px;
+        }
+
+        .phone-mockup:nth-child(2) {
+            transform: perspective(1000px) rotateY(10deg) rotateX(5deg);
+            margin-top: 30px;
+        }
+
+        .phone-mockup:hover {
+            transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            z-index: 3;
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            border-radius: 30px;
+            overflow: hidden;
             background: white;
+            position: relative;
+        }
+
+        .phone-frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            border-radius: 30px;
+            box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.1);
+        }
+
+        .phone-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 25px;
+            background: #1a1a1a;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            z-index: 10;
+        }
+
+        .phone-frame-content {
+            width: 100%;
+            height: 100%;
+            border-radius: 30px;
+            overflow: hidden;
+        }
+
+        .phone-frame-content iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        .phone-label {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--dark);
+            white-space: nowrap;
+            box-shadow: 0 5px 15px rgba(245, 183, 0, 0.3);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: var(--light);
+            padding: 80px 0;
+            margin-top: 60px;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 30px;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
             color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        /* Clients Section */
+        .clients-section {
+            padding: 80px 0;
+            background: white;
+            text-align: center;
+        }
+
+        .clients-title {
+            font-size: 1.2rem;
+            color: var(--text);
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .clients-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .client-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            padding: 15px 25px;
+            background: var(--light);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .client-logo:hover {
+            background: var(--primary);
             transform: translateY(-3px);
         }
 
         /* Features Section */
         .features {
-            padding: 30px 0;
-
+            padding: 100px 0;
             background: var(--light);
         }
 
         .section-title {
             text-align: center;
+            margin-bottom: 60px;
         }
 
         .section-title h2 {
@@ -241,7 +455,7 @@
             justify-content: center;
             margin: 0 auto 25px;
             font-size: 2rem;
-            color: white;
+            color: var(--dark);
         }
 
         .feature-card h3 {
@@ -256,7 +470,7 @@
 
         /* How It Works */
         .how-it-works {
-            padding: 30px 0;
+            padding: 100px 0;
             background: white;
         }
 
@@ -296,7 +510,7 @@
             margin: 0 auto 20px;
             font-size: 1.8rem;
             font-weight: 700;
-            color: white;
+            color: var(--dark);
             border: 5px solid white;
             box-shadow: var(--shadow);
         }
@@ -309,7 +523,7 @@
 
         /* Pricing */
         .pricing {
-            padding: 30px 0;
+            padding: 100px 0;
             background: var(--light);
         }
 
@@ -332,7 +546,7 @@
         }
 
         .pricing-card.popular {
-            border: 3px solid #ffd700;
+            border: 3px solid var(--primary);
             transform: scale(1.05);
             background: linear-gradient(135deg, #fffaf0, #fff5e6);
         }
@@ -342,13 +556,13 @@
             top: -15px;
             left: 50%;
             transform: translateX(-50%);
-            background: linear-gradient(135deg, #ffd700, #ffb347);
-            color: #7c5a00;
+            background: var(--gradient);
+            color: var(--dark);
             padding: 8px 25px;
             border-radius: 20px;
             font-weight: 700;
             font-size: 0.9rem;
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+            box-shadow: 0 4px 15px rgba(245, 183, 0, 0.4);
         }
 
         .pricing-card:hover {
@@ -381,7 +595,7 @@
         }
 
         .price-forever {
-            color: #27ae60;
+            color: var(--primary);
             font-weight: 700;
         }
 
@@ -416,12 +630,12 @@
         }
 
         .fa-crown {
-            color: #ffd700;
+            color: var(--primary);
         }
 
         .maintenance-free {
-            background: #e8f5e8;
-            color: #27ae60;
+            background: #fef9e7;
+            color: var(--primary);
             padding: 8px 15px;
             border-radius: 20px;
             font-size: 0.85rem;
@@ -434,7 +648,7 @@
         .cta-section {
             padding: 100px 0;
             background: var(--gradient);
-            color: white;
+            color: var(--dark);
             text-align: center;
         }
 
@@ -469,7 +683,7 @@
         .footer-column h3 {
             font-size: 1.3rem;
             margin-bottom: 20px;
-            color: var(--accent);
+            color: var(--primary);
         }
 
         .footer-links {
@@ -487,7 +701,7 @@
         }
 
         .footer-links a:hover {
-            color: var(--accent);
+            color: var(--primary);
         }
 
         .social-links {
@@ -510,7 +724,8 @@
         }
 
         .social-link:hover {
-            background: var(--accent);
+            background: var(--primary);
+            color: var(--dark);
             transform: translateY(-3px);
         }
 
@@ -522,57 +737,44 @@
             font-size: 0.9rem;
         }
 
-        /* Demo Preview */
-        .demo-preview {
-            background: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .demo-container {
-            max-width: 400px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-            overflow: hidden;
-            transform: rotate(3deg);
-            transition: all 0.5s ease;
-        }
-
-        .demo-container:hover {
-            transform: rotate(0deg) scale(1.03);
-        }
-
-        .demo-header {
-            background: var(--gradient);
-            padding: 30px;
-            color: white;
-            text-align: center;
-        }
-
-        .demo-links {
-            padding: 20px;
-        }
-
-        .demo-link {
-            display: block;
-            background: #f7fafc;
-            margin: 10px 0;
-            padding: 15px;
-            border-radius: 10px;
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .demo-link:hover {
-            background: var(--primary);
-            color: white;
-        }
-
         /* Responsive */
+        @media (max-width: 968px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .hero-text {
+                width: 100%;
+            }
+
+            .phone-preview {
+                height: auto;
+                margin-top: 40px;
+                width: 100%;
+            }
+
+            .phone-mockup:nth-child(1),
+            .phone-mockup:nth-child(2) {
+                transform: none;
+                margin-top: 0;
+            }
+
+            .steps {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .steps::before {
+                display: none;
+            }
+
+            .pricing-card.popular {
+                transform: scale(1);
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -587,17 +789,43 @@
                 align-items: center;
             }
 
-            .steps {
+            .phone-preview {
                 flex-direction: column;
-                gap: 40px;
+                align-items: center;
+                gap: 60px;
             }
 
-            .steps::before {
-                display: none;
+            .phone-mockup {
+                width: 480px;
+                height: 570px;
             }
 
-            .pricing-card.popular {
-                transform: scale(1);
+            .clients-logos {
+                gap: 30px;
+            }
+
+            .client-logo {
+                font-size: 1.2rem;
+                padding: 12px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .phone-mockup {
+                width: 420px;
+                height: 500px;
+            }
+
+            .stat-value {
+                font-size: 2rem;
             }
         }
     </style>
@@ -623,17 +851,67 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container hero-content">
-            <h1>Sua página de links profissional com atendimento personalizado</h1>
-            <p>Não crie sozinho! Nossos especialistas desenvolvem sua página personalizada e tiram todas as suas
-                dúvidas.</p>
-            <div class="hero-buttons">
-                <a href="#cta" class="btn btn-primary">
-                    <i class="fas fa-comments"></i> Falar com Especialista
-                </a>
-                <a href="#demo" class="btn btn-secondary">
-                    <i class="fas fa-eye"></i> Ver Demonstração
-                </a>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1><span style="color: #F5B700;">Conecte seus clientes</span> a tudo o que você oferece em um só lugar
+                </h1>
+                <p class="hero-subtitle">A página certa para ganhar clientes todos os dias.</p>
+
+                <div class="hero-buttons">
+                    <a href="#cta" class="btn btn-primary">
+                        <i class="fas fa-comments"></i> Criar minha página
+                    </a>
+                    <!-- <a href="#demo" class="btn btn-secondary">
+                        <i class="fas fa-eye"></i> Ver Demonstração
+                    </a> -->
+                </div>
+            </div>
+
+            <div class="phone-preview">
+                <div class="phone-mockup">
+                    <div class="phone-notch"></div>
+                    <div class="phone-screen">
+                        <div class="phone-frame-content">
+                            <iframe src="https://trampo-curriculo.vercel.app/web/land" title="Landing Page"
+                                loading="lazy"></iframe>
+                        </div>
+                        <div class="phone-frame"></div>
+                    </div>
+                    <div class="phone-label">Landing Page</div>
+                </div>
+
+                <div class="phone-mockup">
+                    <div class="phone-notch"></div>
+                    <div class="phone-screen">
+                        <div class="phone-frame-content">
+                            <iframe src="constrular.html" title="Página Constrular" loading="lazy"></iframe>
+                        </div>
+                        <div class="phone-frame"></div>
+                    </div>
+                    <div class="phone-label">Página de Links</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-value">+500</div>
+                <div class="stat-label">Clientes Satisfeitos</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">98%</div>
+                <div class="stat-label">Taxa de Sucesso</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">24h</div>
+                <div class="stat-label">Suporte Rápido</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">R$ 0</div>
+                <div class="stat-label">Taxas Ocultas</div>
             </div>
         </div>
     </section>
@@ -663,6 +941,8 @@
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-mobile-alt"></i>
+                        <i class="fas fa-tablet-alt"></i>
+                        <i class="fas fa-laptop"></i>
                     </div>
                     <h3>Totalmente Responsivo</h3>
                     <p>Funciona perfeitamente em todos os dispositivos.</p>
@@ -698,228 +978,6 @@
         </div>
     </section>
 
-    <!-- Demo Preview -->
-    <section class="demo-preview" id="demo">
-        <div class="container">
-            <div class="section-title">
-                <h2>Veja Como Fica</h2>
-                <p>Confira uma demonstração real de uma página criada para uma loja de construção</p>
-            </div>
-
-            <div class="demo-wrapper">
-                <div class="demo-frame-container">
-                    <div class="demo-frame-header">
-                        <div class="frame-controls">
-                            <span class="control red"></span>
-                            <span class="control yellow"></span>
-                            <span class="control green"></span>
-                        </div>
-                        <div class="frame-url">
-                            <i class="fas fa-lock"></i>
-                            <span>constrular.linkou.com.br</span>
-                        </div>
-                    </div>
-                    <iframe src="constrular.html" class="demo-frame" title="Demonstração da Página Constrular"
-                        loading="lazy"></iframe>
-                </div>
-            </div>
-        </div>
-
-        <style>
-            .demo-preview {
-                padding: 80px 0;
-                background: var(--light);
-            }
-
-            .demo-wrapper {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 50px;
-                align-items: start;
-                margin-top: 50px;
-            }
-
-            .demo-frame-container {
-                background: #1a1a1a;
-                border-radius: 12px;
-                box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-                overflow: hidden;
-                transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
-                transition: all 0.5s ease;
-                border: 1px solid #333;
-            }
-
-            .demo-frame-container:hover {
-                transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
-                box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
-            }
-
-            .demo-frame-header {
-                background: #2d2d2d;
-                padding: 15px 20px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                border-bottom: 1px solid #404040;
-            }
-
-            .frame-controls {
-                display: flex;
-                gap: 8px;
-            }
-
-            .frame-controls .control {
-                width: 12px;
-                height: 12px;
-                border-radius: 50%;
-            }
-
-            .frame-controls .control.red {
-                background: #ff5f57;
-            }
-
-            .frame-controls .control.yellow {
-                background: #ffbd2e;
-            }
-
-            .frame-controls .control.green {
-                background: #28ca42;
-            }
-
-            .frame-url {
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                color: #888;
-                font-size: 0.85rem;
-                font-family: 'Monaco', 'Menlo', monospace;
-            }
-
-            .frame-url i {
-                font-size: 0.7rem;
-                color: #28ca42;
-            }
-
-            .demo-frame {
-                width: 100%;
-                height: 600px;
-                border: none;
-                background: white;
-                display: block;
-            }
-
-            .demo-features {
-                padding: 20px;
-            }
-
-            .demo-features h3 {
-                font-size: 1.8rem;
-                color: var(--dark);
-                margin-bottom: 30px;
-                text-align: center;
-            }
-
-            .features-list {
-                display: flex;
-                flex-direction: column;
-                gap: 25px;
-                margin-bottom: 40px;
-            }
-
-            .feature-item {
-                display: flex;
-                align-items: flex-start;
-                gap: 15px;
-                padding: 20px;
-                background: white;
-                border-radius: 12px;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-                transition: all 0.3s ease;
-            }
-
-            .feature-item:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-            }
-
-            .feature-item i {
-                width: 50px;
-                height: 50px;
-                background: var(--gradient);
-                border-radius: 12px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: white;
-                font-size: 1.2rem;
-                flex-shrink: 0;
-            }
-
-            .feature-item h4 {
-                font-size: 1.1rem;
-                color: var(--dark);
-                margin-bottom: 5px;
-                font-weight: 600;
-            }
-
-            .feature-item p {
-                color: var(--text);
-                font-size: 0.9rem;
-                line-height: 1.5;
-                margin: 0;
-            }
-
-            .demo-cta {
-                text-align: center;
-                padding: 30px;
-                background: white;
-                border-radius: 12px;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            }
-
-            .demo-cta p {
-                font-size: 1.1rem;
-                margin-bottom: 20px;
-                color: var(--dark);
-            }
-
-            /* Responsive */
-            @media (max-width: 968px) {
-                .demo-wrapper {
-                    grid-template-columns: 1fr;
-                    gap: 40px;
-                }
-
-                .demo-frame-container {
-                    transform: none;
-                }
-
-                .demo-frame-container:hover {
-                    transform: translateY(-5px);
-                }
-
-                .demo-frame {
-                    height: 500px;
-                }
-            }
-
-            @media (max-width: 480px) {
-                .demo-frame {
-                    height: 400px;
-                }
-
-                .feature-item {
-                    flex-direction: column;
-                    text-align: center;
-                }
-
-                .feature-item i {
-                    align-self: center;
-                }
-            }
-        </style>
-    </section>
-
     <!-- Pricing -->
     <section class="pricing" id="pricing">
         <div class="container">
@@ -934,7 +992,7 @@
                     <div class="price-small">por 1 ano de uso</div>
                     <ul class="pricing-features">
                         <li><i class="fas fa-check"></i> Página personalizada</li>
-                        <li><i class="fas fa-check"></i> Até 10 links</li>
+                        <li><i class="fas fa-check"></i> Até 5 links</li>
                         <li><i class="fas fa-check"></i> Suporte por WhatsApp</li>
                         <li><i class="fas fa-times"></i> Manutenção gratuita</li>
                         <li><i class="fas fa-times"></i> Atualizações futuras</li>
@@ -978,7 +1036,7 @@
             <h2>Pronto para ter sua página profissional?</h2>
             <p>Fale diretamente com nosso especialista e crie sua página personalizada sem complicação.</p>
             <a href="https://wa.me/5589999732666?text=Olá! Gostaria de criar minha página no Linkou com atendimento personalizado"
-                class="btn btn-primary" target="_blank">
+                class="btn btn-secondary" target="_blank">
                 <i class="fas fa-comments"></i> Falar com Especialista Agora
             </a>
         </div>
@@ -1003,7 +1061,7 @@
                         <li><a href="#features">Páginas Personalizadas</a></li>
                         <li><a href="#how-it-works">Atendimento Humanizado</a></li>
                         <li><a href="#pricing">Planos</a></li>
-                        <li><a href="constrular.html">Demonstração</a></li>
+                        <li><a href="#demo">Demonstração</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -1020,6 +1078,26 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Adiciona efeito de parallax suave aos celulares
+        document.addEventListener('mousemove', (e) => {
+            const phones = document.querySelectorAll('.phone-mockup');
+            const mouseX = e.clientX / window.innerWidth;
+            const mouseY = e.clientY / window.innerHeight;
+
+            phones.forEach((phone, index) => {
+                const offsetX = (mouseX - 0.5) * 20;
+                const offsetY = (mouseY - 0.5) * 20;
+
+                if (index === 0) {
+                    phone.style.transform = `perspective(1000px) rotateY(${-10 + offsetX}deg) rotateX(${5 + offsetY}deg)`;
+                } else {
+                    phone.style.transform = `perspective(1000px) rotateY(${10 + offsetX}deg) rotateX(${5 + offsetY}deg)`;
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
