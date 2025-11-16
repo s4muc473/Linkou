@@ -50,9 +50,10 @@
         }
 
         .container {
-            max-width: 1200px;
+            /* max-width: 1200px; */
             margin: 0 auto;
             padding: 0 20px;
+            overflow-x: hidden;
         }
 
         .nav-container {
@@ -121,7 +122,7 @@
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            /* padding: 0 20px; */
             position: relative;
             z-index: 2;
         }
@@ -747,7 +748,9 @@
             }
 
             .hero-text {
-                width: 92%;
+                width: 95%;
+                /* padding: 10px; */
+                font-size: 0.9rem !important;
             }
 
             .phone-preview {
@@ -783,12 +786,19 @@
             }
 
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 1.8rem;
+                padding-left: 2%;
+                padding-right: 2%;
+            }
+
+            .hero p {
+                font-size: 1rem;
             }
 
             .hero-text {
-                width: 300px;
-                font-size: 0.9rem;
+                width: 100%;
+                /* padding: 10px; */
+                font-size: 0.9rem !important;
             }
 
             .hero-buttons {
@@ -815,9 +825,11 @@
                 font-size: 1.2rem;
                 padding: 12px 20px;
             }
+
+            
         }
 
-      
+        
     </style>
 </head>
 
