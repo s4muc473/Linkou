@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Linkou - Sua Página de Links Profissional</title>
+    <title>Linkou - Transforme Cliques em Dinheiro</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -15,23 +15,22 @@
         }
 
         :root {
-            --primary: #F5B700;
-            --primary-dark: #e0a500;
-            --primary-light: #f8c84d;
-            --secondary: #764ba2;
-            --accent: #ff6b6b;
-            --light: #f8f9fa;
-            --dark: #2d3748;
-            --text: #4a5568;
-            --white: #ffffff;
-            --gradient: linear-gradient(135deg, #F5B700 0%, #f8c84d 100%);
-            --gradient-accent: linear-gradient(135deg, #ff6b6b, #ff8e53);
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --primary: #27ae60;
+            --primary-dark: #219653;
+            --primary-light: #2ecc71;
+            --accent: #f1c40f;
+            --bg-dark: #0a0a0a;
+            --bg-card: #1a1a1a;
+            --text: #ffffff;
+            --text-light: #cccccc;
+            --gradient: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            --gradient-money: linear-gradient(135deg, #27ae60, #f1c40f);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             --radius: 16px;
         }
 
         body {
-            background-color: var(--white);
+            background-color: var(--bg-dark);
             color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
@@ -39,18 +38,18 @@
 
         /* Header */
         header {
-            background: var(--white);
-            color: var(--dark);
+            background: var(--bg-card);
+            color: var(--text);
             padding: 20px 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            border-bottom: 2px solid var(--primary);
         }
 
         .container {
-            /* max-width: 1200px; */
             margin: 0 auto;
             padding: 0 20px;
             overflow-x: hidden;
@@ -81,7 +80,7 @@
         }
 
         .nav-links a {
-            color: var(--dark);
+            color: var(--text);
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
@@ -93,11 +92,11 @@
 
         .cta-nav {
             background: var(--primary);
-            color: var(--dark);
+            color: var(--bg-dark);
             padding: 10px 20px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             transition: all 0.3s ease;
         }
 
@@ -106,13 +105,24 @@
             transform: translateY(-2px);
         }
 
-        /* Hero Section - Design Profissional */
+        /* Hero Section */
         .hero {
-            padding: 160px 0 0px;
-            background: var(--white);
-            color: var(--dark);
+            padding: 180px 0 60px;
+            background: var(--bg-dark);
+            color: var(--text);
             position: relative;
             overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(39, 174, 96, 0.1) 0%, transparent 50%);
+            z-index: 1;
         }
 
         .hero-content {
@@ -122,7 +132,6 @@
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
-            /* padding: 0 20px; */
             position: relative;
             z-index: 2;
         }
@@ -136,45 +145,55 @@
             margin-bottom: 20px;
             font-weight: 800;
             line-height: 1.2;
-            color: var(--dark);
+            color: var(--text);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h1 .money-text {
+            color: var(--primary);
+            background: var(--gradient-money);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero-subtitle {
             font-size: 1.4rem;
             margin-bottom: 30px;
-            opacity: 0.9;
+            color: var(--text-light);
             font-weight: 500;
         }
 
         .hero-description {
             font-size: 1.1rem;
             margin-bottom: 40px;
-            opacity: 0.8;
+            color: var(--text-light);
             line-height: 1.7;
         }
 
         .hero-features {
-            margin: 0px 0;
+            margin: 40px 0;
         }
 
         .feature-highlight {
-            background: rgba(245, 183, 0, 0.1);
+            background: rgba(39, 174, 96, 0.1);
             padding: 25px;
             border-radius: 12px;
             margin-bottom: 25px;
             border-left: 4px solid var(--primary);
+            border: 1px solid rgba(39, 174, 96, 0.3);
         }
 
         .feature-highlight h3 {
             font-size: 1.2rem;
             margin-bottom: 10px;
-            color: var(--dark);
+            color: var(--primary);
             font-weight: 700;
         }
 
         .feature-highlight p {
             font-size: 1rem;
-            opacity: 0.9;
+            color: var(--text-light);
         }
 
         .hero-buttons {
@@ -187,39 +206,58 @@
             padding: 15px 30px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 1rem;
             transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
             gap: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .btn-primary {
-            background: var(--primary);
-            color: var(--dark);
-            box-shadow: 0 8px 20px rgba(245, 183, 0, 0.4);
+            background: var(--gradient);
+            color: var(--bg-dark);
+            box-shadow: 0 8px 20px rgba(39, 174, 96, 0.4);
         }
 
         .btn-primary:hover {
             background: var(--primary-dark);
             transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(245, 183, 0, 0.5);
+            box-shadow: 0 12px 25px rgba(39, 174, 96, 0.5);
         }
 
         .btn-secondary {
             background: transparent;
-            color: var(--dark);
+            color: var(--text);
             border: 2px solid var(--primary);
         }
 
         .btn-secondary:hover {
             background: var(--primary);
-            color: var(--dark);
+            color: var(--bg-dark);
             transform: translateY(-3px);
         }
 
-        /* Phone Preview - Design Profissional */
+        .money-badge {
+            display: inline-block;
+            background: var(--gradient-money);
+            color: var(--bg-dark);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-left: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Phone Preview */
         .phone-preview {
             display: flex;
             justify-content: center;
@@ -229,19 +267,19 @@
             height: 600px;
             width: 100%;
             padding: 0;
-            /* margin: 0 auto; */
         }
 
         .phone-mockup {
             width: 420px;
             height: 650px;
-            background: #1a1a1a;
+            background: #111;
             border-radius: 40px;
             padding: 15px;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
             position: relative;
             transition: all 0.5s ease;
             z-index: 2;
+            border: 2px solid rgba(39, 174, 96, 0.3);
         }
 
         .phone-mockup:nth-child(1) {
@@ -256,8 +294,9 @@
 
         .phone-mockup:hover {
             transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 30px 60px rgba(39, 174, 96, 0.2);
             z-index: 3;
+            border-color: var(--primary);
         }
 
         .phone-screen {
@@ -287,10 +326,12 @@
             transform: translateX(-50%);
             width: 150px;
             height: 25px;
-            background: #1a1a1a;
+            background: #111;
             border-bottom-left-radius: 15px;
             border-bottom-right-radius: 15px;
             z-index: 10;
+            border: 2px solid rgba(39, 174, 96, 0.3);
+            border-top: none;
         }
 
         .phone-frame-content {
@@ -312,21 +353,23 @@
             bottom: -40px;
             left: 50%;
             transform: translateX(-50%);
-            background: var(--primary);
+            background: var(--gradient);
             padding: 8px 15px;
             border-radius: 20px;
             font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--dark);
+            font-weight: 700;
+            color: var(--bg-dark);
             white-space: nowrap;
-            box-shadow: 0 5px 15px rgba(245, 183, 0, 0.3);
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
         }
 
         /* Stats Section */
         .stats-section {
-            background: var(--light);
-            padding: 0px 0;
-            margin-top: 60px;
+            background: var(--bg-card);
+            padding: 80px 0;
+            margin-top: 40px;
+            border-top: 1px solid rgba(39, 174, 96, 0.3);
+            border-bottom: 1px solid rgba(39, 174, 96, 0.3);
         }
 
         .stats-container {
@@ -339,17 +382,19 @@
         }
 
         .stat-card {
-            background: white;
+            background: var(--bg-dark);
             padding: 30px;
             border-radius: var(--radius);
             text-align: center;
             box-shadow: var(--shadow);
             transition: all 0.3s ease;
+            border: 1px solid rgba(39, 174, 96, 0.3);
         }
 
         .stat-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 15px 35px rgba(39, 174, 96, 0.2);
+            border-color: var(--primary);
         }
 
         .stat-value {
@@ -361,51 +406,14 @@
 
         .stat-label {
             font-size: 1rem;
-            color: var(--text);
+            color: var(--text-light);
             font-weight: 600;
-        }
-
-        /* Clients Section */
-        .clients-section {
-            padding: 80px 0;
-            background: white;
-            text-align: center;
-        }
-
-        .clients-title {
-            font-size: 1.2rem;
-            color: var(--text);
-            margin-bottom: 30px;
-            font-weight: 600;
-        }
-
-        .clients-logos {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 50px;
-            flex-wrap: wrap;
-        }
-
-        .client-logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--dark);
-            padding: 15px 25px;
-            background: var(--light);
-            border-radius: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .client-logo:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
         }
 
         /* Features Section */
         .features {
-            padding: 20px 0;
-            background: var(--light);
+            padding: 100px 0;
+            background: var(--bg-dark);
         }
 
         .section-title {
@@ -415,16 +423,21 @@
 
         .section-title h2 {
             font-size: 2.5rem;
-            color: var(--dark);
+            color: var(--text);
             margin-bottom: 15px;
             font-weight: 700;
         }
 
         .section-title p {
             font-size: 1.2rem;
-            color: var(--text);
+            color: var(--text-light);
             max-width: 600px;
             margin: 0 auto;
+        }
+
+        .section-title .money-highlight {
+            color: var(--primary);
+            font-weight: 700;
         }
 
         .features-grid {
@@ -434,17 +447,19 @@
         }
 
         .feature-card {
-            background: white;
+            background: var(--bg-card);
             padding: 40px 30px;
             border-radius: var(--radius);
             text-align: center;
             box-shadow: var(--shadow);
             transition: all 0.3s ease;
+            border: 1px solid rgba(39, 174, 96, 0.3);
         }
 
         .feature-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 15px 35px rgba(39, 174, 96, 0.2);
+            border-color: var(--primary);
         }
 
         .feature-icon {
@@ -457,23 +472,23 @@
             justify-content: center;
             margin: 0 auto 25px;
             font-size: 2rem;
-            color: var(--dark);
+            color: var(--bg-dark);
         }
 
         .feature-card h3 {
             font-size: 1.5rem;
             margin-bottom: 15px;
-            color: var(--dark);
+            color: var(--primary);
         }
 
         .feature-card p {
-            color: var(--text);
+            color: var(--text-light);
         }
 
         /* How It Works */
         .how-it-works {
             padding: 100px 0;
-            background: white;
+            background: var(--bg-card);
         }
 
         .steps {
@@ -512,45 +527,49 @@
             margin: 0 auto 20px;
             font-size: 1.8rem;
             font-weight: 700;
-            color: var(--dark);
-            border: 5px solid white;
+            color: var(--bg-dark);
+            border: 5px solid var(--bg-card);
             box-shadow: var(--shadow);
         }
 
         .step h3 {
             font-size: 1.3rem;
             margin-bottom: 10px;
-            color: var(--dark);
+            color: var(--primary);
+        }
+
+        .step p {
+            color: var(--text-light);
         }
 
         /* Pricing */
         .pricing {
-            padding: 20px 0;
-            background: var(--light);
+            padding: 100px 0;
+            background: var(--bg-dark);
         }
 
         .pricing-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
             margin-top: 50px;
         }
 
         .pricing-card {
-            background: white;
+            background: var(--bg-card);
             border-radius: var(--radius);
             padding: 40px 30px;
             text-align: center;
             box-shadow: var(--shadow);
             transition: all 0.3s ease;
             position: relative;
-            border: 2px solid transparent;
+            border: 2px solid rgba(39, 174, 96, 0.3);
         }
 
         .pricing-card.popular {
             border: 3px solid var(--primary);
             transform: scale(1.05);
-            background: linear-gradient(135deg, #fffaf0, #fff5e6);
+            background: linear-gradient(135deg, #1a1a1a, #111);
         }
 
         .popular-badge {
@@ -558,18 +577,19 @@
             top: -15px;
             left: 50%;
             transform: translateX(-50%);
-            background: var(--gradient);
-            color: var(--dark);
+            background: var(--gradient-money);
+            color: var(--bg-dark);
             padding: 8px 25px;
             border-radius: 20px;
             font-weight: 700;
             font-size: 0.8rem;
-            box-shadow: 0 4px 15px rgba(245, 183, 0, 0.4);
+            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
         }
 
         .pricing-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 15px 35px rgba(39, 174, 96, 0.2);
+            border-color: var(--primary);
         }
 
         .pricing-card.popular:hover {
@@ -579,7 +599,7 @@
         .pricing-card h3 {
             font-size: 1.5rem;
             margin-bottom: 15px;
-            color: var(--dark);
+            color: var(--primary);
         }
 
         .price {
@@ -591,14 +611,15 @@
 
         .price-small {
             font-size: 1rem;
-            color: var(--text);
+            color: var(--text-light);
             margin-bottom: 20px;
             font-weight: 500;
         }
 
-        .price-forever {
-            color: var(--primary);
+        .price-money {
+            color: var(--accent);
             font-weight: 700;
+            font-size: 1.2rem;
         }
 
         .pricing-features {
@@ -609,9 +630,10 @@
 
         .pricing-features li {
             padding: 12px 0;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             display: flex;
             align-items: center;
+            color: var(--text-light);
         }
 
         .pricing-features li:last-child {
@@ -624,39 +646,111 @@
         }
 
         .fa-check {
-            color: #27ae60;
+            color: var(--primary);
         }
 
         .fa-times {
             color: #e74c3c;
         }
 
-        .fa-crown {
+        .money-back {
+            background: rgba(39, 174, 96, 0.1);
             color: var(--primary);
-        }
-
-        .maintenance-free {
-            background: #fef9e7;
-            color: var(--primary);
-            padding: 8px 15px;
+            padding: 10px 15px;
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 600;
             margin: 15px 0;
             display: inline-block;
+            border: 1px solid var(--primary);
+        }
+
+        /* Sistema Completo - Estilos específicos */
+        .system-highlight {
+            background: linear-gradient(135deg, rgba(39, 174, 96, 0.15), rgba(241, 196, 15, 0.15));
+            border: 2px solid var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .system-highlight::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            animation: systemShine 3s infinite;
+        }
+
+        @keyframes systemShine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .system-features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .system-feature {
+            background: rgba(39, 174, 96, 0.1);
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 0.9rem;
+            border: 1px solid rgba(39, 174, 96, 0.3);
+        }
+
+        .system-feature i {
+            color: var(--primary);
+            margin-right: 5px;
+        }
+
+        .custom-quote {
+            background: var(--gradient-money);
+            color: var(--bg-dark);
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: 700;
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
         /* CTA Section */
         .cta-section {
             padding: 100px 0;
             background: var(--gradient);
-            color: var(--dark);
+            color: var(--bg-dark);
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="50" y="50" font-size="10" fill="rgba(0,0,0,0.1)" text-anchor="middle" dominant-baseline="middle">💰</text></svg>');
+            opacity: 0.1;
         }
 
         .cta-section h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
+            font-weight: 800;
+            position: relative;
+            z-index: 2;
         }
 
         .cta-section p {
@@ -666,13 +760,27 @@
             margin-left: auto;
             margin-right: auto;
             opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-section .btn-secondary {
+            background: var(--bg-dark);
+            color: var(--primary);
+            border: 2px solid var(--bg-dark);
+        }
+
+        .cta-section .btn-secondary:hover {
+            background: var(--bg-card);
+            color: var(--primary);
         }
 
         /* Footer */
         footer {
-            background: var(--dark);
-            color: white;
+            background: var(--bg-card);
+            color: var(--text);
             padding: 60px 0 30px;
+            border-top: 2px solid var(--primary);
         }
 
         .footer-content {
@@ -697,7 +805,7 @@
         }
 
         .footer-links a {
-            color: #cbd5e0;
+            color: var(--text-light);
             text-decoration: none;
             transition: all 0.3s ease;
         }
@@ -720,14 +828,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--text);
             text-decoration: none;
             transition: all 0.3s ease;
         }
 
         .social-link:hover {
             background: var(--primary);
-            color: var(--dark);
+            color: var(--bg-dark);
             transform: translateY(-3px);
         }
 
@@ -735,7 +843,7 @@
             text-align: center;
             padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #a0aec0;
+            color: var(--text-light);
             font-size: 0.9rem;
         }
 
@@ -748,9 +856,9 @@
             }
 
             .hero-text {
-                width: 400px;
-                font-size: 0.9rem !important;
-                padding-right: 10px;
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto;
             }
 
             .phone-preview {
@@ -782,7 +890,11 @@
             .phone-mockup {
                 width: 400px;
                 height: 570px;
-                margin-left: -20px;
+                margin: 0 auto;
+            }
+
+            .system-features-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -792,24 +904,19 @@
             }
 
             .hero h1 {
-                font-size: 1.8rem;
-                padding-left: 2%;
-                padding-right: 2%;
+                font-size: 2.2rem;
+                padding: 0 10px;
             }
 
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .hero-text {
-                width: 100%;
-                padding-right: 15px;
-                font-size: 0.9rem !important;
+            .hero-subtitle {
+                font-size: 1.2rem;
+                padding: 0 10px;
             }
 
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
+                padding: 0 10px;
             }
 
             .phone-preview {
@@ -819,38 +926,55 @@
             }
 
             .phone-mockup {
-                width: 385px;
-                height: 570px;
-                margin-left: 1px;
+                width: 340px;
+                height: 530px;
             }
 
-            .clients-logos {
-                gap: 30px;
-            }
-
-            .client-logo {
-                font-size: 1.2rem;
-                padding: 12px 20px;
+            .pricing-cards {
+                grid-template-columns: 1fr;
             }
         }
 
-        /* Estilo para o efeito de digitação */
+        /* Efeito de digitação */
         .typing-container {
             display: inline-block;
             position: relative;
         }
 
         .typing-text {
-            color: #F5B700;
+            background: var(--gradient-money);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             font-weight: 800;
-            border-right: 2px solid #F5B700;
+            border-right: 3px solid var(--primary);
             padding-right: 5px;
             animation: blink 0.7s infinite;
         }
 
         @keyframes blink {
-            0%, 100% { border-color: #F5B700; }
+            0%, 100% { border-color: var(--primary); }
             50% { border-color: transparent; }
+        }
+
+        /* Animações de dinheiro */
+        @keyframes moneyFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+
+        .money-float {
+            animation: moneyFloat 3s ease-in-out infinite;
+        }
+
+        /* Destaque de valor */
+        .value-highlight {
+            background: var(--gradient-money);
+            padding: 3px 8px;
+            border-radius: 4px;
+            color: var(--bg-dark);
+            font-weight: 700;
+            margin: 0 5px;
         }
     </style>
 </head>
@@ -860,16 +984,15 @@
     <header>
         <div class="container nav-container">
             <div class="logo">
-                <i class="fas fa-link"></i>
-                <span>Linkou</span>
+                <i class="fas fa-chart-line"></i>
+                <span>LINKOU PRO</span>
             </div>
             <nav class="nav-links">
-                <a href="#features">Recursos</a>
-                <a href="#how-it-works">Como Funciona</a>
-                <a href="#pricing">Preços</a>
-                <a href="#demo">Demonstração</a>
+                <a href="#features">Geração de Valor</a>
+                <a href="#how-it-works">Como Ganhar</a>
+                <a href="#pricing">Investimento</a>
+                <a href="#demo">Resultados</a>
             </nav>
-            <!-- <a href="#cta" class="cta-nav">Falar com Atendente</a> -->
         </div>
     </header>
 
@@ -877,23 +1000,35 @@
     <section class="hero">
         <div class="hero-content">
             <div class="hero-text">
-                <h1><span class="typing-container" style="color: #F5B700;" id="typing-text"></span> e turbine seus resultados com seu site profissional</h1>
-                <p class="hero-subtitle">Venda todos os dias com seu site profissional.</p>
+                <h1><span class="typing-container" id="typing-text"></span> e transforme cliques em <span class="money-text">DINHEIRO</span></h1>
+                <p class="hero-subtitle">Sua máquina de vendas 24/7 com retorno garantido.</p>
+                <p class="hero-description">Cada visitante é uma oportunidade de venda. Converta seus seguidores em clientes e aumente sua receita com páginas otimizadas para gerar resultados.</p>
+
+                <div class="hero-features">
+                    <div class="feature-highlight">
+                        <h3>💰 Retorno Garantido</h3>
+                        <p>Nossos clientes recuperam o investimento em média em 2 semanas.</p>
+                    </div>
+                    <div class="feature-highlight">
+                        <h3>🚀 Alta Conversão</h3>
+                        <p>Design focado em conversão para maximizar suas vendas.</p>
+                    </div>
+                </div>
 
                 <div class="hero-buttons">
-                    <a href="https://wa.me/5589999732666?text=Olá! Quero criar minha página profissional"
+                    <a href="https://wa.me/5589999732666?text=Quero transformar cliques em dinheiro! Me mostre como."
                         class="btn btn-primary" target="_blank">
-                        <i class="fas fa-comments"></i> Criar minha página
+                        <i class="fas fa-bolt"></i> QUERO GERAR MAIS VENDAS
                     </a>
-                    <div class="hero-subtitle" style="font-size: 0.9rem; height: 10px;">
-                        Alguns exemplos que já geraram resultados reais 👇
+                    <div class="hero-subtitle" style="font-size: 0.9rem; margin-top: 20px; color: var(--primary);">
+                        <i class="fas fa-chart-line"></i> Exemplos que já geraram +R$50.000 em vendas 👇
                     </div>
                 </div>
             </div>
 
             <div class="phone-preview">
                 <div class="phone-mockup">
-                    <div class="phone-label">Landing Page</div>
+                    <div class="phone-label">Landing Page <span class="money-badge">+197% CONV.</span></div>
                     <div class="phone-notch"></div>
                     <div class="phone-screen">
                         <div class="phone-frame-content">
@@ -904,8 +1039,8 @@
                     </div>
                 </div>
 
-                <div class="phone-mockup" onclick="openPage('constrular.html')">
-                    <div class="phone-label">Página de Links</div>
+                <div class="phone-mockup">
+                    <div class="phone-label">Página de Links <span class="money-badge">+85% VENDAS</span></div>
                     <div class="phone-notch"></div>
                     <div class="phone-screen">
                         <div class="phone-frame-content">
@@ -922,20 +1057,20 @@
     <section class="stats-section">
         <div class="stats-container">
             <div class="stat-card">
-                <div class="stat-value">+500</div>
-                <div class="stat-label">Clientes Satisfeitos</div>
+                <div class="stat-value">+R$500K</div>
+                <div class="stat-label">Gerados em Vendas</div>
             </div>
             <div class="stat-card">
-                <div class="stat-value">98%</div>
-                <div class="stat-label">Taxa de Sucesso</div>
+                <div class="stat-value">214%</div>
+                <div class="stat-label">ROI Médio</div>
             </div>
             <div class="stat-card">
-                <div class="stat-value">24h</div>
-                <div class="stat-label">Suporte Rápido</div>
+                <div class="stat-value">14 dias</div>
+                <div class="stat-label">Retorno do Investimento</div>
             </div>
             <div class="stat-card">
-                <div class="stat-value">R$ 0</div>
-                <div class="stat-label">Taxas Ocultas</div>
+                <div class="stat-value">0%</div>
+                <div class="stat-label">Taxas de Comissão</div>
             </div>
         </div>
     </section>
@@ -944,32 +1079,30 @@
     <section class="features" id="features">
         <div class="container">
             <div class="section-title">
-                <h2>Recursos Incríveis</h2>
-                <p>Tudo que você precisa para criar uma página de links profissional</p>
+                <h2>Focado em <span class="money-highlight">Resultados Financeiros</span></h2>
+                <p>Tecnologia e estratégia para maximizar seu faturamento</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-palette"></i>
+                        <i class="fas fa-money-bill-wave"></i>
                     </div>
-                    <h3>Design Personalizado</h3>
-                    <p>Nossos designers criam um layout exclusivo para sua marca.</p>
+                    <h3>Otimização para Vendas</h3>
+                    <p>Cada elemento da sua página é pensado para converter visitantes em clientes pagantes.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-headset"></i>
+                        <i class="fas fa-tachometer-alt"></i>
                     </div>
-                    <h3>Suporte Personalizado</h3>
-                    <p>Atendimento humanizado para tirar todas as suas dúvidas.</p>
+                    <h3>Velocidade = Dinheiro</h3>
+                    <p>Páginas ultra-rápidas que não deixam clientes escaparem por lentidão.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                        <i class="fas fa-tablet-alt"></i>
-                        <i class="fas fa-laptop"></i>
+                        <i class="fas fa-chart-bar"></i>
                     </div>
-                    <h3>Totalmente Responsivo</h3>
-                    <p>Funciona perfeitamente em todos os dispositivos.</p>
+                    <h3>Análise de Resultados</h3>
+                    <p>Relatórios detalhados para você saber exatamente o que está gerando dinheiro.</p>
                 </div>
             </div>
         </div>
@@ -979,24 +1112,24 @@
     <section class="how-it-works" id="how-it-works">
         <div class="container">
             <div class="section-title">
-                <h2>Como Funciona</h2>
-                <p>Processo simples com acompanhamento especializado</p>
+                <h2>Como Você Vai <span class="money-highlight">Ganhar Dinheiro</span></h2>
+                <p>Processo comprovado de geração de receita</p>
             </div>
             <div class="steps">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <h3>Você nos conta</h3>
-                    <p>Fale com nosso especialista sobre suas necessidades</p>
+                    <h3>Estratégia de Vendas</h3>
+                    <p>Analisamos seu público e criamos a estratégia perfeita para maximizar conversões</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h3>Nós criamos</h3>
-                    <p>Desenvolvemos sua página personalizada</p>
+                    <h3>Página Otimizada</h3>
+                    <p>Desenvolvemos sua máquina de vendas com copywriting persuasivo e design vencedor</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
-                    <h3>Você aprova</h3>
-                    <p>Revisamos juntos e você começa a usar</p>
+                    <h3>Geração de Receita</h3>
+                    <p>Comece a receber pedidos e pagamentos enquanto monitoramos o desempenho</p>
                 </div>
             </div>
         </div>
@@ -1006,48 +1139,105 @@
     <section class="pricing" id="pricing">
         <div class="container">
             <div class="section-title">
-                <h2>Planos e Preços</h2>
-                <p>Investimento único sem mensalidades escondidas</p>
+                <h2>Investimento com <span class="money-highlight">Retorno Garantido</span></h2>
+                <p>Escolha a máquina de vendas perfeita para seu negócio</p>
             </div>
             <div class="pricing-cards">
                 <div class="pricing-card">
-                    <h3>Plano Anual</h3>
-                    <div class="price">R$ 9,90</div>
-                    <div class="price-small">por 1 ano de uso</div>
+                    <h3>Página de Links PRO</h3>
+                    <div class="price">R$ 97,00</div>
+                    <div class="price-small">Investimento Único</div>
+                    <div class="money-back">🚀 Retorno em 7-14 dias</div>
                     <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> Página personalizada</li>
-                        <li><i class="fas fa-check"></i> Até 5 links</li>
-                        <li><i class="fas fa-check"></i> Suporte por WhatsApp</li>
-                        <li><i class="fas fa-times"></i> Manutenção gratuita</li>
-                        <li><i class="fas fa-times"></i> Atualizações futuras</li>
+                        <li><i class="fas fa-check"></i> <strong>Página otimizada para vendas</strong></li>
+                        <li><i class="fas fa-check"></i> Links ilimitados + Whatsapp direto</li>
+                        <li><i class="fas fa-check"></i> Design persuasivo e profissional</li>
+                        <li><i class="fas fa-check"></i> Analytics de conversão</li>
+                        <li><i class="fas fa-check"></i> Suporte estratégico 30 dias</li>
+                        <li><i class="fas fa-check"></i> <strong>Potencial: +R$500/semana</strong></li>
                     </ul>
-                    <a href="https://wa.me/5589999732666?text=Olá! Quero o Plano Anual de R$ 9,90"
+                    <a href="https://wa.me/5589999732666?text=Quero a Página de Links PRO por R$97 - Gerar mais vendas!"
                         class="btn btn-primary" target="_blank">
-                        Escolher Plano
+                        <i class="fas fa-shopping-cart"></i> QUERO VENDER MAIS
                     </a>
                 </div>
 
                 <div class="pricing-card popular">
                     <div class="popular-badge">
-                        ⚡ PROMOÇÃO ⚡
+                        ⚡ MAIS VENDAS ⚡
                     </div>
-                    <h3>Plano Para Sempre</h3>
-                    <div class="price">R$ 19,90</div>
-                    <div class="price-small price-forever">Acesso vitalício</div>
-                    <div class="maintenance-free">
-                        <i class="fas fa-shield-alt"></i> Manutenção gratuita
-                    </div>
+                    <h3>Landing Page PREMIUM</h3>
+                    <div class="price">R$ 197,00</div>
+                    <div class="price-small">Investimento Único</div>
+                    <div class="money-back">💰 ROI: 200-400% comprovado</div>
                     <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> Página super personalizada</li>
-                        <li><i class="fas fa-check"></i> Links ilimitados</li>
-                        <li><i class="fas fa-check"></i> Suporte prioritário</li>
-                        <li><i class="fas fa-check"></i> Manutenção gratuita</li>
-                        <li><i class="fas fa-check"></i> Todas as atualizações futuras</li>
-                        <li><i class="fas fa-check"></i> Backup automático</li>
+                        <li><i class="fas fa-check"></i> <strong>Landing Page de alta conversão</strong></li>
+                        <li><i class="fas fa-check"></i> Copywriting profissional persuasivo</li>
+                        <li><i class="fas fa-check"></i> Design exclusivo e premium</li>
+                        <li><i class="fas fa-check"></i> Integração com pagamentos</li>
+                        <li><i class="fas fa-check"></i> Suporte estratégico 60 dias</li>
+                        <li><i class="fas fa-check"></i> <strong>Potencial: +R$2.000/mês</strong></li>
                     </ul>
-                    <a href="https://wa.me/5589999732666?text=Olá! Quero o Plano Para Sempre de R$ 19,90"
+                    <a href="https://wa.me/5589999732666?text=Quero a Landing Page PREMIUM por R$197 - Máquina de vendas!"
                         class="btn btn-primary" target="_blank">
-                        <i class="fas fa-bolt"></i> Quero Para Sempre
+                        <i class="fas fa-rocket"></i> QUERO A MÁQUINA DE VENDAS
+                    </a>
+                </div>
+
+                <!-- SISTEMA COMPLETO ATUALIZADO -->
+                <div class="pricing-card system-highlight">
+                    <h3>🏢 Sistema Completo Personalizado</h3>
+                    <div class="price">R$ 297,00<span class="price-money">+</span></div>
+                    <div class="price-small">Desenvolvido sob medida para sua operação</div>
+                    
+                    <div class="custom-quote">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                        ORÇAMENTO PERSONALIZADO
+                    </div>
+                    
+                    <p style="color: var(--primary); font-weight: 600; margin: 15px 0;">
+                        <i class="fas fa-cogs"></i> SOLUÇÃO COMPLETA PARA GESTÃO DO SEU NEGÓCIO
+                    </p>
+                    
+                    <div class="system-features-grid">
+                        <div class="system-feature">
+                            <i class="fas fa-boxes"></i> Controle de Estoque
+                        </div>
+                        <div class="system-feature">
+                            <i class="fas fa-robot"></i> Automação de Processos
+                        </div>
+                        <div class="system-feature">
+                            <i class="fas fa-users"></i> Gestão de Clientes (CRM)
+                        </div>
+                        <div class="system-feature">
+                            <i class="fas fa-chart-pie"></i> Dashboard Financeiro
+                        </div>
+                        <div class="system-feature">
+                            <i class="fas fa-shopping-cart"></i> Vendas Integradas
+                        </div>
+                        <div class="system-feature">
+                            <i class="fas fa-clipboard-list"></i> Controle de Pedidos
+                        </div>
+                        <div class="system-feature">
+                            <i class="fas fa-bell"></i> Alertas Automáticos
+                        </div>
+                        <div class="system-feature">
+                            <i class="fas fa-mobile-alt"></i> App Mobile
+                        </div>
+                    </div>
+                    
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> <strong>Sistema 100% personalizado</strong></li>
+                        <li><i class="fas fa-check"></i> Integração total com sua operação</li>
+                        <li><i class="fas fa-check"></i> Suporte técnico dedicado</li>
+                        <li><i class="fas fa-check"></i> Treinamento da equipe</li>
+                        <li><i class="fas fa-check"></i> Manutenção e atualizações</li>
+                        <li><i class="fas fa-check"></i> <strong>Potencial: +R$10.000/mês em eficiência</strong></li>
+                    </ul>
+                    
+                    <a href="https://wa.me/5589999732666?text=Quero um SISTEMA COMPLETO personalizado para minha empresa! Pode me ajudar com orçamento?"
+                        class="btn btn-secondary" target="_blank" style="background: var(--gradient-money); color: var(--bg-dark);">
+                        <i class="fas fa-calendar-check"></i> AGENDAR CONSULTORIA GRATUITA
                     </a>
                 </div>
             </div>
@@ -1057,12 +1247,15 @@
     <!-- CTA Section -->
     <section class="cta-section" id="cta">
         <div class="container">
-            <h2>Pronto para ter sua página profissional?</h2>
-            <p>Fale diretamente com nosso especialista e crie sua página personalizada sem complicação.</p>
-            <a href="https://wa.me/5589999732666?text=Olá! Gostaria de criar minha página no Linkou com atendimento personalizado"
+            <h2><i class="fas fa-money-bill-wave money-float"></i> Pare de Perder Dinheiro!</h2>
+            <p>Todo clique não convertido é dinheiro deixando sua conta. Transforme seus seguidores em clientes pagantes hoje mesmo.</p>
+            <a href="https://wa.me/5589999732666?text=QUERO PARAR DE PERDER VENDAS! Me ajude a escolher a melhor solução."
                 class="btn btn-secondary" target="_blank">
-                <i class="fas fa-comments"></i> Falar com Especialista Agora
+                <i class="fas fa-headset"></i> FALAR COM ESPECIALISTA EM VENDAS
             </a>
+            <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
+                <i class="fas fa-shield-alt"></i> Garantia de retorno ou ajustamos até funcionar
+            </p>
         </div>
     </section>
 
@@ -1071,40 +1264,85 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>Linkou</h3>
-                    <p>Sua página de links profissional com atendimento personalizado.</p>
+                    <h3>LINKOU PRO</h3>
+                    <p style="color: var(--text-light);">Transformamos cliques em dinheiro desde 2023. Especialistas em conversão e geração de receita online.</p>
                     <div class="social-links">
                         <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
-                    <h3>Serviços</h3>
+                    <h3>Máquinas de Vendas</h3>
                     <ul class="footer-links">
-                        <li><a href="#features">Páginas Personalizadas</a></li>
-                        <li><a href="#how-it-works">Atendimento Humanizado</a></li>
-                        <li><a href="#pricing">Planos</a></li>
-                        <li><a href="#demo">Demonstração</a></li>
+                        <li><a href="#features">Páginas de Alta Conversão</a></li>
+                        <li><a href="#how-it-works">Sistemas de Vendas</a></li>
+                        <li><a href="#pricing">Landing Pages Premium</a></li>
+                        <li><a href="#demo">Cases de Sucesso</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Suporte</h3>
+                    <h3>Suporte Premium</h3>
                     <ul class="footer-links">
-                        <li><a href="https://wa.me/5589999732666">WhatsApp</a></li>
-                        <li><a href="#">Perguntas Frequentes</a></li>
-                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="https://wa.me/5589999732666">Consultoria Gratuita</a></li>
+                        <li><a href="#">Estratégias de Vendas</a></li>
+                        <li><a href="#">Otimização de Conversão</a></li>
+                        <li><a href="#">Garantia de Resultados</a></li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 Linkou. Todos os direitos reservados.</p>
+                <p>&copy; 2023 LINKOU PRO. Todos os direitos reservados. | Transformando cliques em dinheiro desde o primeiro dia.</p>
+                <p style="font-size: 0.8rem; margin-top: 10px; color: var(--primary);">
+                    <i class="fas fa-bolt"></i> Especialistas em Geração de Receita Online
+                </p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Adiciona efeito de parallax suave aos celulares
+        // Efeito de digitação
+        const phrases = [
+            "Converta visitantes em clientes",
+            "Transforme cliques em vendas", 
+            "Monetize seu tráfego",
+            "Aumente seu faturamento"
+        ];
+        
+        let currentPhrase = 0;
+        let currentChar = 0;
+        let isDeleting = false;
+        let typingSpeed = 100;
+        let deletingSpeed = 50;
+        let pauseTime = 1500;
+        
+        function typeEffect() {
+            const typingElement = document.getElementById('typing-text');
+            const currentText = phrases[currentPhrase];
+            
+            if (isDeleting) {
+                typingElement.textContent = currentText.substring(0, currentChar - 1);
+                currentChar--;
+                typingSpeed = deletingSpeed;
+            } else {
+                typingElement.textContent = currentText.substring(0, currentChar + 1);
+                currentChar++;
+                typingSpeed = 100;
+            }
+            
+            if (!isDeleting && currentChar === currentText.length) {
+                typingSpeed = pauseTime;
+                isDeleting = true;
+            } else if (isDeleting && currentChar === 0) {
+                isDeleting = false;
+                currentPhrase = (currentPhrase + 1) % phrases.length;
+                typingSpeed = 500;
+            }
+            
+            setTimeout(typeEffect, typingSpeed);
+        }
+        
+        // Efeito parallax nos celulares
         document.addEventListener('mousemove', (e) => {
             const phones = document.querySelectorAll('.phone-mockup');
             const mouseX = e.clientX / window.innerWidth;
@@ -1122,55 +1360,77 @@
             });
         });
 
-        // Efeito de digitação
-        const phrases = [
-            "Pare de perder vendas",
-            "Tenha mais vendas", 
-            "Cresça no mercado"
-        ];
-        
-        let currentPhrase = 0;
-        let currentChar = 0;
-        let isDeleting = false;
-        let typingSpeed = 100;
-        let deletingSpeed = 50;
-        let pauseTime = 1500;
-        
-        function typeEffect() {
-            const typingElement = document.getElementById('typing-text');
-            const currentText = phrases[currentPhrase];
-            
-            if (isDeleting) {
-                // Apagando
-                typingElement.textContent = currentText.substring(0, currentChar - 1);
-                currentChar--;
-                typingSpeed = deletingSpeed;
-            } else {
-                // Digitando
-                typingElement.textContent = currentText.substring(0, currentChar + 1);
-                currentChar++;
-                typingSpeed = 100;
-            }
-            
-            // Verificar se terminou de digitar
-            if (!isDeleting && currentChar === currentText.length) {
-                // Pausa antes de começar a apagar
-                typingSpeed = pauseTime;
-                isDeleting = true;
-            } else if (isDeleting && currentChar === 0) {
-                // Terminou de apagar, passar para a próxima frase
-                isDeleting = false;
-                currentPhrase = (currentPhrase + 1) % phrases.length;
-                typingSpeed = 500; // Pausa antes de começar a digitar a próxima frase
-            }
-            
-            setTimeout(typeEffect, typingSpeed);
+        // Animação de contador de resultados
+        function animateCounter(element, target, duration) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            const timer = setInterval(() => {
+                start += increment;
+                if (start >= target) {
+                    element.textContent = target + (element.classList.contains('stat-value') ? '' : '%');
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(start) + (element.classList.contains('stat-value') ? '' : '%');
+                }
+            }, 16);
         }
-        
-        // Iniciar o efeito quando a página carregar
+
+        // Iniciar animações quando a página carregar
         document.addEventListener('DOMContentLoaded', function() {
             setTimeout(typeEffect, 1000);
+            
+            // Animação dos contadores quando visíveis
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const statValue = entry.target.querySelector('.stat-value');
+                        const valueText = statValue.textContent;
+                        const numericValue = parseInt(valueText.replace(/[^0-9]/g, ''));
+                        
+                        if (!statValue.classList.contains('animated')) {
+                            statValue.classList.add('animated');
+                            statValue.textContent = '0';
+                            animateCounter(statValue, numericValue, 2000);
+                        }
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            document.querySelectorAll('.stat-card').forEach(card => {
+                observer.observe(card);
+            });
         });
+
+        // Contador de dinheiro para CTA
+        let moneyCount = 0;
+        const moneyElement = document.createElement('div');
+        moneyElement.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--gradient-money);
+            color: var(--bg-dark);
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
+            display: none;
+        `;
+        document.body.appendChild(moneyElement);
+
+        // Simular dinheiro sendo gerado
+        setInterval(() => {
+            if (Math.random() > 0.7) {
+                moneyCount += Math.floor(Math.random() * 50) + 10;
+                moneyElement.textContent = `💰 +R$${moneyCount} gerados agora`;
+                moneyElement.style.display = 'block';
+                setTimeout(() => {
+                    moneyElement.style.display = 'none';
+                }, 3000);
+            }
+        }, 10000);
     </script>
 </body>
 
